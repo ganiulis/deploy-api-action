@@ -1,4 +1,4 @@
-name: Deploy API
+name: Deploy generic API
 
 description: Deploy a generic API from a template.
 
