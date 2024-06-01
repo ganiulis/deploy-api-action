@@ -10,7 +10,7 @@
 ## Example
 
 ```yaml
-name: Deploy API
+name: Deploy generic API
 
 on:
   workflow_dispatch:
