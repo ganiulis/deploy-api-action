@@ -27,7 +27,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: ganiulis/deploy-api-action@0.1.0
+      - uses: ganiulis/deploy-api-action@0.1.1
         with:
           values-yaml: charts/values.yaml
           kube-config-data: "${{ secrets.KUBECONFIG }}"
