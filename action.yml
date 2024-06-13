@@ -11,25 +11,21 @@ inputs:
     description: Path to the chart values file
     required: true
     type: string
-  github-token:
-    description: GitHub token
-    required: true
-    type: string
   kube-config-data:
     description: base64-encoded kubeconfig file data
     required: true
     type: string
-  version:
-    description: A specific version for the container image
+  tag:
+    description: Image tag to deploy
     required: true
     type: string
   release-name:
-    description: Release name for this deployment
+    description: Release name
     required: false
     type: string
     default: api
   namespace:
-    description: Which namespace to release the charts to
+    description: Release namespace
     required: false
     type: string
     default: default
@@ -41,14 +37,14 @@ runs:
       uses: actions/checkout@v4
       with:
         path: values
-        sparse-checkout: ${{ inputs.values-yaml }}
         sparse-checkout-cone-mode: false
+        sparse-checkout: ${{ inputs.values-yaml }}
 
     - name: Upgrade (or install) Helm chart
       uses: wahyd4/kubectl-helm-action@master
       with:
         args: |
           helm repo add ganiulis https://ganiulis.github.io/charts
-          helm upgrade -i ${{ inputs.release-name }} ganiulis/api-template -f values/${{ inputs.values-yaml }} --set container.version=${{ inputs.version }} -n ${{ inputs.namespace }}
+          helm upgrade -i ${{ inputs.release-name }} ganiulis/api-template -f values/${{ inputs.values-yaml }} --set container.version=${{ inputs.tag }} -n ${{ inputs.namespace }}
       env:
         KUBE_CONFIG_DATA: ${{ inputs.kube-config-data }}

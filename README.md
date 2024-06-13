@@ -15,7 +15,8 @@ name: Deploy
 on:
   workflow_dispatch:
     inputs:
-      version:
+      tag:
+        description: Image tag to deploy
         required: true
         type: string
         default: latest
@@ -28,8 +29,7 @@ jobs:
     steps:
       - uses: ganiulis/deploy-api-action@0.1.0
         with:
-          values-yaml: values/api.yaml
-          github-token: "${{ github.token }}"
+          values-yaml: charts/values.yaml
           kube-config-data: "${{ secrets.KUBECONFIG }}"
-          version: "${{ inputs.version }}"
+          tag: "${{ inputs.tag }}"
 ```
