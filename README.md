@@ -12,6 +12,8 @@
 ```yaml
 name: Deploy
 
+run-name: Deploy (${{ inputs.tag }})
+
 on:
   workflow_dispatch:
     inputs:
