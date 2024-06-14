@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/ganiulis/deploy-api-action/tree/HEAD)
+## [0.1.2](https://github.com/ganiulis/deploy-api-action/tree/0.1.2) (2024-06-14)
 
-[Full Changelog](https://github.com/ganiulis/deploy-api-action/compare/0.1.1...HEAD)
+[Full Changelog](https://github.com/ganiulis/deploy-api-action/compare/0.1.1...0.1.2)
 
 **Implemented enhancements:**
 
