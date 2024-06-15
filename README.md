@@ -12,7 +12,7 @@
 ```yaml
 name: Deploy
 
-run-name: Deploy (${{ inputs.tag }})
+run-name: Deploy ${{ inputs.tag }}
 
 on:
   workflow_dispatch:
