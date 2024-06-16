@@ -26,8 +26,6 @@ on:
 jobs:
   deploy-api:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     steps:
       - uses: ganiulis/deploy-api-action@0.1.1
         with:
